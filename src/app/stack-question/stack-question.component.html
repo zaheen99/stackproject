@@ -1,0 +1,76 @@
+<div class="container-fluid main_menu">
+    <div class="row">
+        <div class="col-md-10 col-12 mx-auto padd0">
+            <div class="box-header with-border">
+                <div class="row">
+                    <div class="col-md-10 col-8 padding-threepx input-group pull-left">
+                        <input type="text" class="form-control pull-right search_input" placeholder="Search By anything"
+                            name="search list" autocomplete="off" [(ngModel)]="config.input">
+                    </div>
+                    <div class="col-md-1 col-2 search-div-padd">
+                        <button class="btn btn-success btn-flat search-btn" (click)="searchItemFun()" title="search">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="col-md-1 col-2 reset-div-padd">
+                        <button class="btn btn-primary btn-flat search-btn"  title="reset" (click)="resetItemFun()">
+                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="content-body">
+    <form method="GET">
+        <section class="box">
+            <div class="box box-primary">
+                <div class="row tab-div-mrgin">
+                    <div class="col-md-12">
+                        <table class="table table-responsive table-hover">
+                            <thead>
+                                <tr>
+                                    <th *ngFor="let field of fields;index as i" [ngStyle]="{'width':field.width}">
+                                        <span *ngIf="field.sort">{{field.title}}</span>
+                                        <span *ngIf="!field.sort">{{field.title}}</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr
+                                    *ngFor="let ele of question | filter:config.input | paginate: { itemsPerPage: 5, currentPage: p }">
+                                    <th scope="row">{{ele.owner.user_id}}</th>
+                                    <td scope="row">{{ele.question_id}}</td>
+                                    <th scope="row">{{ele.is_answered}}</th>
+                                    <td>{{ele.creation_date}}</td>
+                                    <td>{{ele.answer_count}}</td>
+                                    <td>{{ele.score}}</td>
+                                    <td>{{ele.last_activity_date}}</td>
+                                    <td>{{ele.title}}</td>
+                                    <td>{{ele.link}}</td>
+                                    <td>{{ele.accepted_answer_id ? ele.accepted_answer_id : 'NA'}}</td>
+                                    <td>{{ele.view_count}}</td>
+                                    <td>{{ele.tags}}</td>
+                                    <td>{{ele.owner.user_type}}</td>
+                                    <td>{{ele.owner.accept_rate ? ele.owner.accept_rate: 'NA'}}</td>
+                                    <td>{{ele.last_edit_date}}</td>
+                                    <td>{{ele.creation_date}}</td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="length===0">
+                                <tr>
+                                    <td colspan="12 nodata-align">
+                                        No Data Found
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <pagination-controls (pageChange)="p = $event" class="float-right font-s">
+                        </pagination-controls>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
+</section>

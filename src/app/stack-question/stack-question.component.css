@@ -1,0 +1,25 @@
+
+.main_menu{
+    background-color: #1e272e;
+}
+.search-btn {
+    height: 32px !important;
+    margin-left: 3px;
+    width: 34px;
+}
+.search-div-padd{
+    padding: 3px 23px 0px;
+}
+.reset-div-padd {
+    padding: 4px 0px 0px 0px;
+}
+.nodata-align {
+    text-align: center
+}
+.tab-div-mrgin {
+    margin-top: 20px;
+}
+.search_input {
+    border-radius: 3px !important;
+    height: 33px !important;
+  }
