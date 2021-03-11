@@ -32,9 +32,8 @@
                         <table class="table table-responsive table-hover">
                             <thead>
                                 <tr>
-                                    <th *ngFor="let field of fields;index as i" [ngStyle]="{'width':field.width}">
-                                        <span *ngIf="field.sort">{{field.title}}</span>
-                                        <span *ngIf="!field.sort">{{field.title}}</span>
+                                    <th *ngFor="let field of fields;index as i">                                        
+                                        <span >{{field.title}}</span>
                                     </th>
                                 </tr>
                             </thead>

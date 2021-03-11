@@ -11,127 +11,89 @@ export class StackQuestionComponent implements OnInit {
   question: any;
   length: number;
   config: any;
-  filterString: any = '';
-  collection = { count: 0, data: [] };
-  filterKey: any = ['url','title', 'answers'];
-  searchText;
+  filterString: any = ''; 
+  filterKey: any = ['url', 'title', 'answers']; 
   fields = [
     {
-      field: 'Question Id',
-      title: 'Question Id',
-      width: '5%',
-      code: false,
-      sort: false
+      title: 'Question Id'
     },
     {
-      field: 'user id',
-      title: 'user id',
-      width: '3%',
-      code: false,
-      sort: false
-    },
-    {
-      field: 'Is answered',
-      title: 'Is answered',
-      width: '5%',
-      code: false,
-      sort: false
-    },
-    {
-      field: 'Creation date',
-      title: 'Creation date',
-      width: '8%',
-      code: false,
-      sort: false
-    },
-    {
-      field: 'Answers',
-      title: 'Answers',
-      width: '3%',
-      code: false,
-      sort: false
-    },
-    {
-      field: 'score',
-      title: 'score',
-      width: '5%',
-      code: false,
-      sort: false
-    },
-    {
-      field: 'last activity date',
-      title: 'last activity date',
-      width: '5%',
-      code: false,
-      sort: false
-    },
-    {
-      field: 'Title',
-      title: 'Title',
-      width: '10%',
-      code: false,
-      sort: false
-    },
-    {
-      field: 'link',
-      title: 'link',
-      width: '10%',
-      code: false,
-      sort: false
-    },
-    {
-      field: 'Accepted answer id',
-      title: 'Accepted answer id',
-      width: '5%',
-      code: false,
-      sort: false
-    },
-    {
-      field: 'View count',
-      title: 'View count',
-      width: '5%',
-      code: false,
-      sort: false
-    },
-    {
-      field: 'Tags',
-      title: 'Tags',
-      width: '5%',
-      code: false,
-      sort: false
-    },
-    {
-      field: 'user type',
-      title: 'user type',
-      width: '5%',
-      code: false,
-      sort: false
-    },
-    {
-      field: 'Accept rate',
-      title: 'Accept rate',
-      width: '5%',
-      code: false,
-      sort: false
-    },
-    {
-      field: 'last edit date',
-      title: 'last edit date',
-      width: '5%',
-      code: false,
-      sort: false
-    },
-    {
-      field: 'creation date',
-      title: 'creation date',
-      width: '5%',
-      code: false,
-      sort: false
 
+      title: 'user id'
+
+    },
+    {
+
+      title: 'Is answered'
+
+    },
+    {
+
+      title: 'Creation date'
+
+    },
+    {
+
+      title: 'Answers'
+
+    },
+    {
+
+      title: 'score'
+
+    },
+    {
+
+      title: 'last activity date'
+
+    },
+    {
+
+      title: 'Title'
+
+    },
+    {
+
+      title: 'link'
+
+    },
+    {
+
+      title: 'Accepted answer id'
+
+    },
+    {
+
+      title: 'View count'
+
+    },
+    {
+
+      title: 'Tags'
+
+    },
+    {
+
+      title: 'user type'
+
+    },
+    {
+
+      title: 'Accept rate'
+
+    },
+    {
+
+      title: 'last edit date'
+
+    },
+    {
+
+      title: 'creation date'
     }
   ];
 
-  constructor(private cocktailService: CocktailService) { 
+  constructor(private cocktailService: CocktailService) {
     this.config = {
       input: '',
       itemsPerPage: 1,
@@ -146,8 +108,8 @@ export class StackQuestionComponent implements OnInit {
     this.getData();
   }
 
-   //this function is for to display the list on the basis of search parameter
-   searchItemFun() {
+  //this function is for to display the list on the basis of search parameter
+  searchItemFun() {
     if (this.config.input === '') {
       return;
     }
@@ -175,7 +137,6 @@ export class StackQuestionComponent implements OnInit {
     this.cocktailService.getCocktailData(route).subscribe((data: any) => {
       this.question = data.items;
       this.length = this.question.length;
-     
     });
   }
 
