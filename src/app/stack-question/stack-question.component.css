@@ -10,6 +10,9 @@
 .search-div-padd{
     padding: 3px 23px 0px;
 }
+
+
+
 .reset-div-padd {
     padding: 4px 0px 0px 0px;
 }
@@ -22,4 +25,29 @@
 .search_input {
     border-radius: 3px !important;
     height: 33px !important;
-  }
+}
+.home-link {
+    color: white;
+    font-size: 15px;
+    text-align: left;    
+    padding-top: 13px;
+}
+.home-link:focus {
+    outline: medium;
+}
+
+@media (max-width: 768px) {
+    .search-div-padd{
+        padding: 3px 0px 0px 2px;
+    }
+}
+
+@media (max-width: 283px) {   
+    reset-div-padd {
+        padding: 3px 0px 0px 0px;
+    }        
+    .search-btn {
+        width: 29px;
+    }
+}
+

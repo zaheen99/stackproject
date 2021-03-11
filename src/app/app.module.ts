@@ -8,11 +8,13 @@ import { FormsModule } from '@angular/forms';
 import { StackQuestionComponent } from './stack-question/stack-question.component';
 import { CocktailService } from './services/cocktail-service.service';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StackQuestionComponent
+    StackQuestionComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
